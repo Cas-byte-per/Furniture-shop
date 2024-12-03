@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="rus">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Мебельный магазин "Практика"</title>
+        <link rel="icon" type="image/png" href="/фавикон.png" />
+        <link rel="stylesheet" href="child.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"; rel="stylesheet">
+    </head>
+<body>
+    <header>
+        <h1><p>Детская</p></h1>
+        <!-- Скрытый чекбокс для управления гамбургер-меню -->
+        <input type="checkbox" class="menu-checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+        </label>
+        <nav>
+            <div class="notification">
+                <div class="bell">
+                    <span class="badge">4</span>
+                </div>
+                <div class="notification-list">
+                    <ul id="notificationItems">
+                        <div class="item">
+                            Скидка 20% на новые коллекции мебели
+                        </div>
+                        <div class="item">
+                            Акция: 20% на мягкие кресла
+                        </div>
+                        <div class="item">
+                            Новинки в категории "Гостиные"
+                        </div>
+                    </ul>
+                </div>
+            </div> 
+            <ul>
+                <li><a href="#top">Наверх</a></li>
+                <li><a href="/form_7.html">Оставьте заявку</a></li>
+                <li><a href="/reg-form.html">Вход в личный кабинет</a></li>
+                <li><a href="/index.html">Домой</a></li>
+            </ul>
+            
+        </nav>
+    </header>
+    <!-- Контейнер для карточек -->
+    <div class="card-container1">
+        <h1 id="about" class = "about"><p>Подборка материалов для детей разного возраста</p></h1>
+        <div class="card1">
+            <img src="подборка для детей до 2 лет.png" alt="подборка для детей до 2 лет" class="card1-image">
+            <div class="card1-text">подборка материалов и цветов детской для детей до 2 лет</div>
+        </div>
+        <div class="card1">
+            <img src="подборка для мальчика старшего возраста.png" alt="подборка для мальчика старшего возраста" class="card1-image">
+            <div class="card1-text">подборка материалов и цветов детской для мальчика старшего возраста</div>
+        </div>
+        <div class="card1">
+            <img src="подборка для девочки старшего возраста.png" alt="подборка для девочки старшего возраста" class="card1-image">
+            <div class="card1-text">подборка материалов и цветов детской для девочки старшего возраста</div>
+        </div>
+    </div>
+    <h1 id="about" class = "about"><p>Мебель для детской</p></h1>
+    <div class="container">
+        <div class="sort-controls">
+            <button id="sort-asc">Сортировать по возрастанию цены</button>
+            <button id="sort-desc">Сортировать по убыванию цены</button>
+        </div>
+
+        <div class="filter">
+            <h3>Фильтр по цене</h3>
+            <label for="min-price">Мин. цена:</label>
+            <input type="number" id="min-price" placeholder="Например, 100">
+            <label for="max-price">Макс. цена:</label>
+            <input type="number" id="max-price" placeholder="Например, 500">
+            <button onclick="applyFilter()">Применить фильтр</button>
+        </div>
+
+        <div id="filter-result" class="filter-result"></div>
+
+        <div class="product-list">
+            <!-- Мебель для детей до 2 лет -->
+            <div class="product" id="product1" draggable="true" data-price="3000" data-name="Кроватка с регулируемым уровнем высоты матраса" data-img="кроватка.jpg">
+                <img src="кроватка.jpg" alt="Кроватка с регулируемым уровнем высоты матраса">
+                <p>Товар 1: Кроватка с регулируемым уровнем высоты матраса</p>
+                <p>Цена: 3000 руб.</p>
+                <button class="add-to-cart" data-price="3000" data-name="Кроватка с регулируемым уровнем высоты матраса" data-img="кроватка.jpg">Добавить в корзину</button>
+            </div>
+            <div class="product" id="product2" draggable="true" data-price="2500" data-name="Пеленальный столик с ящиками для хранения" data-img="пеленальный столик.jpg">
+                <img src="пеленальный столик.jpg" alt="Пеленальный столик с ящиками для хранения">
+                <p>Товар 2: Пеленальный столик с ящиками для хранения</p>
+                <p>Цена: 2500 руб.</p>
+                <button class="add-to-cart" data-price="2500" data-name="Пеленальный столик с ящиками для хранения" data-img="пеленальный столик.jpg">Добавить в корзину</button>
+            </div>
+            <div class="product" id="product3" draggable="true" data-price="3500" data-name="Кресло-качалка для кормления родителей" data-img="Кресло-качалка для кормления родителей.jpg">
+                <img src="Кресло-качалка для кормления родителей.jpg" alt="Кресло-качалка для кормления родителей">
+                <p>Товар 3: Кресло-качалка для кормления родителей</p>
+                <p>Цена: 3500 руб.</p>
+                <button class="add-to-cart" data-price="3500" data-name="Кресло-качалка для кормления родителей" data-img="Кресло-качалка для кормления родителей.jpg">Добавить в корзину</button>
+            </div>
+            <div class="product" id="product4" draggable="true" data-price="2000" data-name="Манеж с мягкими стенками" data-img="Манеж с мягкими стенками.jpg">
+                <img src="Манеж с мягкими стенками.jpg" alt="Манеж с мягкими стенками">
+                <p>Товар 4: Манеж с мягкими стенками</p>
+                <p>Цена: 2000 руб.</p>
+                <button class="add-to-cart" data-price="2000" data-name="Манеж с мягкими стенками" data-img="Манеж с мягкими стенками.jpg">Добавить в корзину</button>
+            </div>
+        
+            <!-- Мебель для мальчика среднего возраста -->
+            <div class="product" id="product5" draggable="true" data-price="5000" data-name="Кровать с выдвижными ящиками для игрушек" data-img="Кровать с выдвижными ящиками для игрушек.jpg">
+                <img src="Кровать с выдвижными ящиками для игрушек.jpg" alt="Кровать с выдвижными ящиками для игрушек">
+                <p>Товар 5: Кровать с выдвижными ящиками для игрушек</p>
+                <p>Цена: 5000 руб.</p>
+                <button class="add-to-cart" data-price="5000" data-name="Кровать с выдвижными ящиками для игрушек" data-img="Кровать с выдвижными ящиками для игрушек.jpg">Добавить в корзину</button>
+            </div>
+            <div class="product" id="product6" draggable="true" data-price="3000" data-name="органайзер для канцтоваров" data-img="органайзер для канцтоваров.jpg">
+                <img src="органайзер для канцтоваров.jpg" alt="органайзер для канцтоваров">
+                <p>Товар 6: Органайзер для канцтоваров</p>
+                <p>Цена: 3000 руб.</p>
+                <button class="add-to-cart" data-price="3000" data-name="органайзер для канцтоваров" data-img="органайзер для канцтоваров.jpg">Добавить в корзину</button>
+            </div>
+            <div class="product" id="product7" draggable="true" data-price="2000" data-name="Стеллаж для книг и коллекций" data-img="Стеллаж для книг и коллекций.jpg">
+                <img src="Стеллаж для книг и коллекций.jpg" alt="Стеллаж для книг и коллекций">
+                <p>Товар 7: Стеллаж для книг и коллекций</p>
+                <p>Цена: 2000 руб.</p>
+                <button class="add-to-cart" data-price="2000" data-name="Стеллаж для книг и коллекций" data-img="Стеллаж для книг и коллекций.jpg">Добавить в корзину</button>
+            </div>
+            <div class="product" id="product8" draggable="true" data-price="1000" data-name="Мягкое кресло-мешок для отдыха" data-img="Мягкое кресло-мешок для отдыха.jpg">
+                <img src="Мягкое кресло-мешок для отдыха.jpg" alt="Мягкое кресло-мешок для отдыха">
+                <p>Товар 8: Мягкое кресло-мешок для отдыха</p>
+                <p>Цена: 1000 руб.</p>
+                <button class="add-to-cart" data-price="1000" data-name="Мягкое кресло-мешок для отдыха" data-img="Мягкое кресло-мешок для отдыха.jpg">Добавить в корзину</button>
+            </div>
+        
+            <!-- Мебель для девочки среднего возраста -->
+            <div class="product" id="product9" draggable="true" data-price="5500" data-name="Кровать с балдахином" data-img="Кровать с балдахином.jpg">
+                <img src="Кровать с балдахином.jpg" alt="Кровать с балдахином">
+                <p>Товар 9: Кровать с балдахином</p>
+                <p>Цена: 5500 руб.</p>
+                <button class="add-to-cart" data-price="5500" data-name="Кровать с балдахином" data-img="Кровать с балдахином.jpg">Добавить в корзину</button>
+            </div>
+            <div class="product" id="product10" draggable="true" data-price="4000" data-name="Письменный стол с зеркалом и местом для хранения мелочей" data-img="Письменный стол.jpg">
+                <img src="Письменный стол.jpg" alt="Письменный стол с зеркалом и местом для хранения мелочей">
+                <p>Товар 10: Письменный стол с зеркалом и местом для хранения мелочей</p>
+                <p>Цена: 4000 руб.</p>
+                <button class="add-to-cart" data-price="4000" data-name="Письменный стол с зеркалом и местом для хранения мелочей" data-img="Письменный стол.jpg">Добавить в корзину</button>
+            </div>
+            <div class="product" id="product11" draggable="true" data-price="3500" data-name="Комод с ящиками и отделениями для украшений" data-img="Комод с ящиками и отделениями для украшений.jpg">
+                <img src="Комод с ящиками и отделениями для украшений.jpg" alt="Комод с ящиками и отделениями для украшений">
+                <p>Товар 11: Комод с ящиками и отделениями для украшений</p>
+                <p>Цена: 3500 руб.</p>
+                <button class="add-to-cart" data-price="3500" data-name="Комод с ящиками и отделениями для украшений" data-img="Комод с ящиками и отделениями для украшений.jpg">Добавить в корзину</button>
+            </div>
+            <div class="product" id="product12" draggable="true" data-price="4500" data-name="Шкаф для одежды с зеркальными дверцами" data-img="Шкаф для одежды с зеркальными дверцами.jpg">
+                <img src="Шкаф для одежды с зеркальными дверцами.jpg" alt="Шкаф для одежды с зеркальными дверцами">
+                <p>Товар 12: Шкаф для одежды с зеркальными дверцами</p>
+                <p>Цена: 4500 руб.</p>
+                <button class="add-to-cart" data-price="4500" data-name="Шкаф для одежды с зеркальными дверцами" data-img="Шкаф для одежды с зеркальными дверцами.jpg">Добавить в корзину</button>
+            </div>
+        </div>        
+        </div>        
+        <div class="cart" id="cart" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>Ваша корзина</h2>
+            <!-- Кнопка для оформления заказа -->
+            <button id="checkout-button">Оформить заказ</button>
+
+            <!-- Кнопка для просмотра корзины -->
+            <button id="view-cart-button">Просмотреть корзину</button>
+
+            <!-- Контейнер для отображения корзины -->
+            <div id="cart-content" class="cart-content"></div>
+
+            <!-- Сумма корзины -->
+            <p>Текущая сумма: <span id="cart-value">0</span> руб.</p>
+        </div>
+    </div>
+    <footer>
+        <address>
+            <h1 id="Top3"><p>Связь с нами</p></h1>
+                <div class="social-media">
+                    <div class="social-buttons" class = "body">
+                        <a href="https://www.facebook.com" class="social-button facebook"></a>
+                        <a href="https://www.twitter.com" class="social-button twitter"></a>
+                        <a href="https://www.instagram.com" class="social-button instagram"></a>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </address>
+    </footer>
+    <script src="../ванная/bathroom.js"></script>
+</body>
+</html>
