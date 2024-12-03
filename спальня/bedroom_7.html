@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="rus">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Мебельный магазин "Практика"</title>
+        <link rel="icon" type="image/png" href="/фавикон.png" />
+        <link rel="stylesheet" href="bedroom_7.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"; rel="stylesheet">
+    </head>
+    <header>
+        <h1><p>Спальня</p></h1>
+        <!-- Скрытый чекбокс для управления гамбургер-меню -->
+        <input type="checkbox" class="menu-checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+        </label>
+        <nav>
+            <div class="notification">
+                <div class="bell">
+                    <span class="badge">3</span>
+                </div>
+                <div class="notification-list">
+                    <ul id="notificationItems">
+                        <div class="item">
+                            Скидка 20% на новые коллекции мебели
+                        </div>
+                        <div class="item">
+                            Акция: 20% на мягкие кресла
+                        </div>
+                        <div class="item">
+                            Новинки в категории "Гостиные"
+                        </div>
+                    </ul>
+                </div>
+            </div> 
+            <ul>
+                <li><a href="#top">Наверх</a></li>
+                <li><a href="/form_7.html">Оставьте заявку</a></li>
+                <li><a href="/reg-form.html">Вход в личный кабинет</a></li>
+                <li><a href="/index.html">Домой</a></li>
+            </ul>
+            
+        </nav>
+    </header>
+    <body>
+        <div class = "sos">
+            <h1 id="about" class = "about"><p>Примеры спален</p></h1>
+        </div>
+        <div class="card-containerr">
+            <div class="carrd">
+                <img src="кровать1.jpg" alt="Кровать двуспальная">
+            <div class="overlay">
+                <h3>Кровать двуспальная</h3>
+            </div>
+            </div>
+            <div class="carrd">
+                <img src="кровать2.jpg" alt="Кровать двуспальная">
+                <div class="overlay">
+                <h3>Кровать двуспальная</h3>
+            </div>
+            </div>
+            <div class="carrd">
+                <img src="кровать3.jpg" alt="Кровать двуспальная">
+                <div class="overlay">
+                <h3>Кровать двуспальная</h3>
+            </div>
+            </div>
+        </div>
+        <h1 id="about" class = "about"><p>Советы по обустройству спальни</p></h1>
+        <div class="card-container1">
+            <div class="card-1">
+                <div class="card1-content">
+                    <h3>Цветовая палитра</h3>
+                    <p>Выбирайте мягкие и теплые оттенки:
+                        бежевый, серый, светло-голубой, 
+                        пастельно-розовый или зелёный.
+                        Эти цвета помогают расслабиться и создают ощущение покоя. 
+                        Яркие акценты можно добавить через мелкие детали, например, подушки или картины, чтобы не перегружать пространство.
+                    </p>
+                </div>
+            </div>
+            <div class="card-1">
+                <div class="card1-content">
+                    <h3>Освещение</h3>
+                    <p>Организуйте многослойное освещение.
+                        Основной источник света (люстра или потолочные светильники) может быть дополнен бра, настольными лампами или гирляндами. 
+                        Лампы с теплым жёлтым светом создают уютную атмосферу, а диммеры позволят регулировать яркость в зависимости от настроения. 
+                        Не забывайте про свечи для особого уюта.</p>
+                </div>
+            </div>
+            <div class="card-1">
+                <div class="card1-content">
+                    <h3>Текстиль и декор</h3>
+                    <p>Уют создают тактильные и визуально приятные материалы. 
+                        Постельное белье из натуральных тканей, мягкие одеяла, несколько подушек разных размеров, ковёр у кровати и плотные шторы для уединения.
+                        Декор лучше свести к минимуму — пара фотографий, растений или свечей достаточно, чтобы спальня не выглядела загроможденной.</p>
+                </div>
+            </div>
+        </div>
+        <h1 id="about" class = "about"><p>Мебель для детской</p></h1>
+    <div class="container">
+        <div class="sort-controls">
+            <button id="sort-asc">Сортировать по возрастанию цены</button>
+            <button id="sort-desc">Сортировать по убыванию цены</button>
+        </div>
+
+        <div class="filter">
+            <h3>Фильтр по цене</h3>
+            <label for="min-price">Мин. цена:</label>
+            <input type="number" id="min-price" placeholder="Например, 100">
+            <label for="max-price">Макс. цена:</label>
+            <input type="number" id="max-price" placeholder="Например, 500">
+            <button onclick="applyFilter()">Применить фильтр</button>
+        </div>
+
+        <div id="filter-result" class="filter-result"></div>
+
+        <div class="product-list">
+            <!-- Мебель для спальни -->
+            <div class="product" id="product1" draggable="true" data-price="10000" data-name="Двуспальная кровать с мягким изголовьем" data-img="двуспальная_кровать.jpg">
+                <img src="двуспальная_кровать.jpg" alt="Двуспальная кровать с мягким изголовьем">
+                <p>Товар 1: Двуспальная кровать с мягким изголовьем</p>
+                <p>Цена: 10 000 руб.</p>
+                <button class="add-to-cart" data-price="10000" data-name="Двуспальная кровать с мягким изголовьем" data-img="двуспальная_кровать.jpg">Добавить в корзину</button>
+            </div>
+            <div class="product" id="product2" draggable="true" data-price="7000" data-name="Комод с зеркалом" data-img="комод_с_зеркалом.jpg">
+                <img src="комод_с_зеркалом.jpg" alt="Комод с зеркалом">
+                <p>Товар 2: Комод с зеркалом</p>
+                <p>Цена: 7 000 руб.</p>
+                <button class="add-to-cart" data-price="7000" data-name="Комод с зеркалом" data-img="комод_с_зеркалом.jpg">Добавить в корзину</button>
+            </div>
+            <div class="product" id="product3" draggable="true" data-price="12000" data-name="Шкаф-купе с зеркальными дверями" data-img="шкаф_купе.jpg">
+                <img src="шкаф_купе.jpg" alt="Шкаф-купе с зеркальными дверями">
+                <p>Товар 3: Шкаф-купе с зеркальными дверями</p>
+                <p>Цена: 12 000 руб.</p>
+                <button class="add-to-cart" data-price="12000" data-name="Шкаф-купе с зеркальными дверями" data-img="шкаф_купе.jpg">Добавить в корзину</button>
+            </div>
+            <div class="product" id="product4" draggable="true" data-price="5000" data-name="Тумбочка с ящиком и полкой" data-img="тумбочка.jpg">
+                <img src="тумбочка.jpg" alt="Тумбочка с ящиком и полкой">
+                <p>Товар 4: Тумбочка с ящиком и полкой</p>
+                <p>Цена: 5 000 руб.</p>
+                <button class="add-to-cart" data-price="5000" data-name="Тумбочка с ящиком и полкой" data-img="тумбочка.jpg">Добавить в корзину</button>
+            </div>
+            <div class="product" id="product5" draggable="true" data-price="3000" data-name="Зеркало настенное овальной формы" data-img="зеркало.jpg">
+                <img src="зеркало.jpg" alt="Зеркало настенное овальной формы">
+                <p>Товар 5: Зеркало настенное овальной формы</p>
+                <p>Цена: 3 000 руб.</p>
+                <button class="add-to-cart" data-price="3000" data-name="Зеркало настенное овальной формы" data-img="зеркало.jpg">Добавить в корзину</button>
+            </div>
+            <div class="product" id="product6" draggable="true" data-price="8000" data-name="Кресло для отдыха с мягкой обивкой" data-img="кресло.jpg">
+                <img src="кресло.jpg" alt="Кресло для отдыха с мягкой обивкой">
+                <p>Товар 6: Кресло для отдыха с мягкой обивкой</p>
+                <p>Цена: 8 000 руб.</p>
+                <button class="add-to-cart" data-price="8000" data-name="Кресло для отдыха с мягкой обивкой" data-img="кресло.jpg">Добавить в корзину</button>
+            </div>
+            <div class="product" id="product7" draggable="true" data-price="4500" data-name="Ковёр для спальни" data-img="ковер.jpg">
+                <img src="ковер.jpg" alt="Ковёр для спальни">
+                <p>Товар 7: Ковёр для спальни</p>
+                <p>Цена: 4 500 руб.</p>
+                <button class="add-to-cart" data-price="4500" data-name="Ковёр для спальни" data-img="ковер.jpg">Добавить в корзину</button>
+            </div>
+            <div class="product" id="product8" draggable="true" data-price="6500" data-name="Осветительный торшер интересной формы" data-img="торшер.jpg">
+                <img src="торшер.jpg" alt="Осветительный торшер интересной формы">
+                <p>Товар 8: Осветительный торшер интересной формы</p>
+                <p>Цена: 6 500 руб.</p>
+                <button class="add-to-cart" data-price="6500" data-name="Осветительный торшер интересной формы" data-img="торшер.jpg">Добавить в корзину</button>
+            </div>
+        </div>               
+        <div class="cart" id="cart" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>Ваша корзина</h2>
+            <!-- Кнопка для оформления заказа -->
+            <button id="checkout-button">Оформить заказ</button>
+
+            <!-- Кнопка для просмотра корзины -->
+            <button id="view-cart-button">Просмотреть корзину</button>
+
+            <!-- Контейнер для отображения корзины -->
+            <div id="cart-content" class="cart-content"></div>
+
+            <!-- Сумма корзины -->
+            <p>Текущая сумма: <span id="cart-value">0</span> руб.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <address>
+            <h1 id="Top3"><p>Связь с нами</p></h1>
+                <div class="social-media">
+                    <div class="social-buttons" class = "body">
+                        <a href="https://www.facebook.com" class="social-button facebook"></a>
+                        <a href="https://www.twitter.com" class="social-button twitter"></a>
+                        <a href="https://www.instagram.com" class="social-button instagram"></a>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </address>
+    </footer>
+    <script src="../ванная/bathroom.js"></script>
+</body>
+</html>
